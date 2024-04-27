@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p><%= pageContent %></p>
+<% blogposts.forEach( function (post) {%>
+    <h1><%= post.title %></h1>
+    <% if(post.disp === post.content){ %>
+        <p><%= post.disp %></p>
+    <% } else {%>
+        <p><%= post.disp %> <a href=<%= "/posts/" + post.title %>>Read More</a></p>
+    <% } %>
+<% }); %>
+
+<%- include("partials/footer") -%>
+
